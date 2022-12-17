@@ -1,0 +1,23 @@
+﻿<Window x:Class="Соц_поддержка.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Соц_поддержка"
+        mc:Ignorable="d"
+        Title="Основное окно" Height="686" Width="1321" WindowStartupLocation="CenterScreen">
+    <Grid>
+        <Grid.Background>
+            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                <GradientStop Color="White"/>
+                <GradientStop Color="#FF386499" Offset="1"/>
+            </LinearGradientBrush>
+        </Grid.Background>
+        <Rectangle Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="590" Margin="220,35,0,0" Stroke="Black" VerticalAlignment="Top" Width="880"/>
+        <Image Margin="798,257,372,273" Source="icons8-контрольный-список-100.png" Stretch="Fill"/>
+        <Image Margin="370,257,800,273" Source="icons8-идентифицированный-пользователь-мужчина-100.png" Stretch="Fill"/>
+        <Label Content="Учет клиентов социальной поддержки" HorizontalAlignment="Left" Margin="281,119,0,0" VerticalAlignment="Top" FontSize="36" FontFamily="Sitka Small"/>
+        <Button Content="Сотрудники" HorizontalAlignment="Left" Margin="295,431,0,0" VerticalAlignment="Top" Width="294" Height="45" FontFamily="Sitka Small" FontSize="24" Background="#FF4F4F4F" Foreground="White" Click="Button_Click"/>
+        <Button Content="Записи клиентов" HorizontalAlignment="Left" Margin="742,431,0,0" VerticalAlignment="Top" Width="294" Height="45" FontFamily="Sitka Small" FontSize="24" Background="#FF4F4F4F" Foreground="White" Click="Button_Click_1"/>
+    </Grid>
+</Window>
