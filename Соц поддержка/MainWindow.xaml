@@ -17,7 +17,9 @@
         <Image Margin="798,257,372,273" Source="icons8-контрольный-список-100.png" Stretch="Fill"/>
         <Image Margin="370,257,800,273" Source="icons8-идентифицированный-пользователь-мужчина-100.png" Stretch="Fill"/>
         <Label Content="Учет клиентов социальной поддержки" HorizontalAlignment="Left" Margin="281,119,0,0" VerticalAlignment="Top" FontSize="36" FontFamily="Sitka Small"/>
-        <Button Content="Сотрудники" HorizontalAlignment="Left" Margin="295,431,0,0" VerticalAlignment="Top" Width="294" Height="45" FontFamily="Sitka Small" FontSize="24" Background="#FF4F4F4F" Foreground="White" Click="Button_Click"/>
-        <Button Content="Записи клиентов" HorizontalAlignment="Left" Margin="742,431,0,0" VerticalAlignment="Top" Width="294" Height="45" FontFamily="Sitka Small" FontSize="24" Background="#FF4F4F4F" Foreground="White" Click="Button_Click_1"/>
+        <Button Content="Войти как администратор" HorizontalAlignment="Left" Margin="244,431,0,0" VerticalAlignment="Top" Width="395" Height="45" FontFamily="Sitka Small" FontSize="24" Background="#FF4F4F4F" Foreground="White" Click="Button_Click"/>
+        <Button Content="Войти как сотрудник" HorizontalAlignment="Left" Margin="678,431,0,0" VerticalAlignment="Top" Width="394" Height="44" FontFamily="Sitka Small" FontSize="24" Background="#FF4F4F4F" Foreground="White" Click="Button_Click_1"/>
+        <Label Content="Сотрудники" HorizontalAlignment="Left" Margin="370,382,0,0" VerticalAlignment="Top" FontSize="22" FontFamily="Sitka Small"/>
+        <Label Content="Запись населения" HorizontalAlignment="Left" Margin="759,388,0,0" VerticalAlignment="Top" FontSize="22" FontFamily="Sitka Small"/>
     </Grid>
 </Window>

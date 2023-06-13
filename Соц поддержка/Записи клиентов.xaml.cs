@@ -36,38 +36,47 @@ namespace Соц_поддержка
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
-            Добавление добавление = new Добавление();
-            добавление.Show();
-            Close();
+            var add = new Client();
+            support.Client.Add(add);
+            var add1 = new Добавление(support, add);
+            add1.ShowDialog();
+            update();
         }
 
-        private void Button_Click_2(object sender, RoutedEventArgs e)
+        private void btnDel_Click(object sender, RoutedEventArgs e)
         {
-            Редактирование редактирование = new Редактирование();
-            редактирование.Show();
-            Close();
+            var del = clientTable.SelectedItem as Client;
+            if (del == null)
+            {
+                MessageBox.Show("Выберите строку");
+                return;
+            }
+            support.Client.Remove(del);
+            support.SaveChanges();
+            update();
         }
-        private void btn_del_Click(object sender, RoutedEventArgs e)
+        private void btn_edd_Click(object sender, RoutedEventArgs e)
         {
-            support = new SupportEntities();
-            Client item = clientTable.SelectedItem as Client;
-            try
-            {
-                Client client = support.Client.Where(r => r.id == item.id).Single();
-                support.Client.Remove(client);
-                support.SaveChanges();
-                MessageBox.Show("Запись удалена!");
-                update();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
+            Button edd1 = sender as Button;
+            var edd2 = edd1.DataContext as Client;
+            var edd3 = new Редактирование(support, edd2);
+            edd3.ShowDialog();
+            clientTable.ItemsSource = support.Client.ToList();
         }
         private void update()
         {
             clientTable.ItemsSource = support.Client.ToList();
             clientTable.Items.Refresh();
+        }
+        private void search_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            if (search.Text == null)
+            {
+                return;
+            }
+            List<Client> clients = support.Client.ToList();
+            clients = clients.Where(x => x.Surename.ToLower().Contains(search.Text.ToLower())).ToList();
+            clientTable.ItemsSource = clients.OrderBy(x => x.id).ToList();
         }
     }
 }

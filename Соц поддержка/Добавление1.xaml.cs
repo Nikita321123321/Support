@@ -15,22 +15,22 @@ using System.Windows.Shapes;
 namespace Соц_поддержка
 {
     /// <summary>
-    /// Логика взаимодействия для Редактирование.xaml
+    /// Логика взаимодействия для Добавление1.xaml
     /// </summary>
-    public partial class Редактирование : Window
+    public partial class Добавление1 : Window
     {
         SupportEntities support;
-        public Редактирование(SupportEntities support1, Client client)
+        public Добавление1(SupportEntities support1, Worker worker)
         {
             InitializeComponent();
             this.support = support1;
-            this.DataContext = client;
+            this.DataContext = worker;
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            Записи_клиентов записи = new Записи_клиентов();
-            записи.Show();
+            Сотрудники сотрудники = new Сотрудники();
+            сотрудники.Show();
             Close();
         }
 

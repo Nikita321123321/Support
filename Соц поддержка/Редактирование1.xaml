@@ -1,11 +1,11 @@
-﻿<Window x:Class="Соц_поддержка.Редактирование"
+﻿<Window x:Class="Соц_поддержка.Редактирование1"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Соц_поддержка"
         mc:Ignorable="d"
-        Title="Редактирование" Height="686" Width="1321" WindowStartupLocation="CenterScreen">
+        Title="Редактирование1" Height="686" Width="1321" WindowStartupLocation="CenterScreen">
     <Grid>
         <Grid.Background>
             <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
@@ -44,8 +44,8 @@
                 </ControlTemplate>
             </TextBox.Template>
         </TextBox>
-        <Label Content="Дата рождения" HorizontalAlignment="Left" Margin="248,215,0,0" VerticalAlignment="Top" FontSize="24"/>
-        <TextBox x:Name="birthdayTxt" Text="{Binding Birthday}" HorizontalAlignment="Left" Height="50" Margin="540,215,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="519" Background="White" FontSize="24" FontFamily="Sitka Small">
+        <Label Content="Код пола" HorizontalAlignment="Left" Margin="248,215,0,0" VerticalAlignment="Top" FontSize="24"/>
+        <TextBox x:Name="genderTxt" Text="{Binding id_Gender}" HorizontalAlignment="Left" Height="50" Margin="540,215,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="519" Background="White" FontSize="24" FontFamily="Sitka Small">
             <TextBox.Template>
                 <ControlTemplate>
                     <Border CornerRadius="12" Padding="2" BorderThickness="1" BorderBrush="Black">
@@ -54,8 +54,8 @@
                 </ControlTemplate>
             </TextBox.Template>
         </TextBox>
-        <Label Content="Телефон" HorizontalAlignment="Left" Margin="248,270,0,0" VerticalAlignment="Top" FontSize="24"/>
-        <TextBox x:Name="phoneTxt" Text="{Binding Phone}" HorizontalAlignment="Left" Height="50" Margin="540,270,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="519" Background="White" FontSize="24" FontFamily="Sitka Small">
+        <Label Content="Код специальности" HorizontalAlignment="Left" Margin="248,270,0,0" VerticalAlignment="Top" FontSize="24"/>
+        <TextBox x:Name="specialityTxt" Text="{Binding id_Speciality}" HorizontalAlignment="Left" Height="50" Margin="540,270,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="519" Background="White" FontSize="24" FontFamily="Sitka Small">
             <TextBox.Template>
                 <ControlTemplate>
                     <Border CornerRadius="12" Padding="2" BorderThickness="1" BorderBrush="Black">
@@ -64,8 +64,8 @@
                 </ControlTemplate>
             </TextBox.Template>
         </TextBox>
-        <Label Content="Адрес" HorizontalAlignment="Left" Margin="248,325,0,0" VerticalAlignment="Top" FontSize="24"/>
-        <TextBox x:Name="adressTxt" Text="{Binding Adress}" HorizontalAlignment="Left" Height="50" Margin="540,325,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="519" Background="White" FontSize="24" FontFamily="Sitka Small">
+        <Label Content="Телефон" HorizontalAlignment="Left" Margin="248,325,0,0" VerticalAlignment="Top" FontSize="24"/>
+        <TextBox x:Name="phoneTxt" Text="{Binding Phone}" HorizontalAlignment="Left" Height="50" Margin="540,325,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="519" Background="White" FontSize="24" FontFamily="Sitka Small">
             <TextBox.Template>
                 <ControlTemplate>
                     <Border CornerRadius="12" Padding="2" BorderThickness="1" BorderBrush="Black">
@@ -74,8 +74,8 @@
                 </ControlTemplate>
             </TextBox.Template>
         </TextBox>
-        <Label Content="Дата записи" HorizontalAlignment="Left" Margin="248,380,0,0" VerticalAlignment="Top" FontSize="24"/>
-        <TextBox x:Name="dateTxt" Text="{Binding Recording_date}" HorizontalAlignment="Left" Height="50" Margin="540,380,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="519" Background="White" FontSize="24" FontFamily="Sitka Small">
+        <Label Content="День рождения" HorizontalAlignment="Left" Margin="248,380,0,0" VerticalAlignment="Top" FontSize="24"/>
+        <TextBox x:Name="birthdayTxt" Text="{Binding Birthday}" HorizontalAlignment="Left" Height="50" Margin="540,380,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="519" Background="White" FontSize="24" FontFamily="Sitka Small">
             <TextBox.Template>
                 <ControlTemplate>
                     <Border CornerRadius="12" Padding="2" BorderThickness="1" BorderBrush="Black">
@@ -84,18 +84,8 @@
                 </ControlTemplate>
             </TextBox.Template>
         </TextBox>
-        <Label Content="Время записи" HorizontalAlignment="Left" Margin="248,435,0,0" VerticalAlignment="Top" FontSize="24"/>
-        <TextBox x:Name="timeTxt" Text="{Binding Recording_time}" HorizontalAlignment="Left" Height="50" Margin="540,435,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="519" Background="White" FontSize="24" FontFamily="Sitka Small">
-            <TextBox.Template>
-                <ControlTemplate>
-                    <Border CornerRadius="12" Padding="2" BorderThickness="1" BorderBrush="Black">
-                        <ScrollViewer Margin="0" x:Name="PART_ContentHost" />
-                    </Border>
-                </ControlTemplate>
-            </TextBox.Template>
-        </TextBox>
-        <Label Content="Номер отдела" HorizontalAlignment="Left" Margin="248,490,0,0" VerticalAlignment="Top" FontSize="24"/>
-        <TextBox x:Name="departamentTxt" Text="{Binding id_Departament}" HorizontalAlignment="Left" Height="50" Margin="540,490,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="519" Background="White" FontSize="24" FontFamily="Sitka Small">
+        <Label Content="Email" HorizontalAlignment="Left" Margin="248,435,0,0" VerticalAlignment="Top" FontSize="24"/>
+        <TextBox x:Name="emailTxt" Text="{Binding Email}" HorizontalAlignment="Left" Height="50" Margin="540,435,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="519" Background="White" FontSize="24" FontFamily="Sitka Small">
             <TextBox.Template>
                 <ControlTemplate>
                     <Border CornerRadius="12" Padding="2" BorderThickness="1" BorderBrush="Black">

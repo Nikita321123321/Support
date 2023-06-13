@@ -34,6 +34,9 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>3093536-round.ico</ApplicationIcon>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
@@ -100,11 +103,17 @@
     <Compile Include="Добавление.xaml.cs">
       <DependentUpon>Добавление.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Добавление1.xaml.cs">
+      <DependentUpon>Добавление1.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Записи клиентов.xaml.cs">
       <DependentUpon>Записи клиентов.xaml</DependentUpon>
     </Compile>
     <Compile Include="Редактирование.xaml.cs">
       <DependentUpon>Редактирование.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Редактирование1.xaml.cs">
+      <DependentUpon>Редактирование1.xaml</DependentUpon>
     </Compile>
     <Compile Include="Сотрудники.xaml.cs">
       <DependentUpon>Сотрудники.xaml</DependentUpon>
@@ -125,11 +134,19 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Добавление1.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Записи клиентов.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Редактирование.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Редактирование1.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -186,6 +203,7 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="icons8-налево-60.png" />
+    <Resource Include="3093536-round.ico" />
     <Content Include="Social.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>Social.Context.cs</LastGenOutput>

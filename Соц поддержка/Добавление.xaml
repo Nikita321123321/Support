@@ -15,7 +15,7 @@
         </Grid.Background>
         <Rectangle Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="590" Margin="220,35,0,0" Stroke="Black" VerticalAlignment="Top" Width="880"/>
         <Label Content="Фамилия" HorizontalAlignment="Left" Margin="248,50,0,0" VerticalAlignment="Top" FontSize="24"/>
-        <TextBox x:Name="surenameadd" HorizontalAlignment="Left" Height="50" Margin="540,50,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="519" Background="White" FontSize="24" FontFamily="Sitka Small">
+        <TextBox x:Name="surenameTxt" Text="{Binding Surename}" HorizontalAlignment="Left" Height="50" Margin="540,50,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="519" Background="White" FontSize="24" FontFamily="Sitka Small">
             <TextBox.Template>
                 <ControlTemplate>
                     <Border CornerRadius="12" Padding="2" BorderThickness="1" BorderBrush="Black">
@@ -25,7 +25,7 @@
             </TextBox.Template>
         </TextBox>
         <Label Content="Имя" HorizontalAlignment="Left" Margin="248,105,0,0" VerticalAlignment="Top" FontSize="24"/>
-        <TextBox x:Name="nameadd" HorizontalAlignment="Left" Height="50" Margin="540,105,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="519" Background="White" FontSize="24" FontFamily="Sitka Small">
+        <TextBox x:Name="nameTxt" Text="{Binding Name}" HorizontalAlignment="Left" Height="50" Margin="540,105,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="519" Background="White" FontSize="24" FontFamily="Sitka Small">
             <TextBox.Template>
                 <ControlTemplate>
                     <Border CornerRadius="12" Padding="2" BorderThickness="1" BorderBrush="Black">
@@ -35,7 +35,7 @@
             </TextBox.Template>
         </TextBox>
         <Label Content="Отчество" HorizontalAlignment="Left" Margin="248,160,0,0" VerticalAlignment="Top" FontSize="24"/>
-        <TextBox x:Name="lastnameadd" HorizontalAlignment="Left" Height="50" Margin="540,160,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="519" Background="White" FontSize="24" FontFamily="Sitka Small">
+        <TextBox x:Name="lastnameTxt" Text="{Binding Lastname}" HorizontalAlignment="Left" Height="50" Margin="540,160,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="519" Background="White" FontSize="24" FontFamily="Sitka Small">
             <TextBox.Template>
                 <ControlTemplate>
                     <Border CornerRadius="12" Padding="2" BorderThickness="1" BorderBrush="Black">
@@ -45,7 +45,7 @@
             </TextBox.Template>
         </TextBox>
         <Label Content="Дата рождения" HorizontalAlignment="Left" Margin="248,215,0,0" VerticalAlignment="Top" FontSize="24"/>
-        <TextBox x:Name="birthdayadd" HorizontalAlignment="Left" Height="50" Margin="540,215,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="519" Background="White" FontSize="24" FontFamily="Sitka Small">
+        <TextBox x:Name="birthdayTxt" Text="{Binding Birthday}" HorizontalAlignment="Left" Height="50" Margin="540,215,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="519" Background="White" FontSize="24" FontFamily="Sitka Small">
             <TextBox.Template>
                 <ControlTemplate>
                     <Border CornerRadius="12" Padding="2" BorderThickness="1" BorderBrush="Black">
@@ -55,7 +55,7 @@
             </TextBox.Template>
         </TextBox>
         <Label Content="Телефон" HorizontalAlignment="Left" Margin="248,270,0,0" VerticalAlignment="Top" FontSize="24"/>
-        <TextBox x:Name="phoneadd" HorizontalAlignment="Left" Height="50" Margin="540,270,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="519" Background="White" FontSize="24" FontFamily="Sitka Small">
+        <TextBox x:Name="phoneTxt" Text="{Binding Phone}" HorizontalAlignment="Left" Height="50" Margin="540,270,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="519" Background="White" FontSize="24" FontFamily="Sitka Small">
             <TextBox.Template>
                 <ControlTemplate>
                     <Border CornerRadius="12" Padding="2" BorderThickness="1" BorderBrush="Black">
@@ -65,7 +65,7 @@
             </TextBox.Template>
         </TextBox>
         <Label Content="Адрес" HorizontalAlignment="Left" Margin="248,325,0,0" VerticalAlignment="Top" FontSize="24"/>
-        <TextBox x:Name="adressadd" HorizontalAlignment="Left" Height="50" Margin="540,325,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="519" Background="White" FontSize="24" FontFamily="Sitka Small">
+        <TextBox x:Name="adressTxt" Text="{Binding Adress}" HorizontalAlignment="Left" Height="50" Margin="540,325,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="519" Background="White" FontSize="24" FontFamily="Sitka Small">
             <TextBox.Template>
                 <ControlTemplate>
                     <Border CornerRadius="12" Padding="2" BorderThickness="1" BorderBrush="Black">
@@ -75,7 +75,7 @@
             </TextBox.Template>
         </TextBox>
         <Label Content="Дата записи" HorizontalAlignment="Left" Margin="248,380,0,0" VerticalAlignment="Top" FontSize="24"/>
-        <TextBox x:Name="dateadd" HorizontalAlignment="Left" Height="50" Margin="540,380,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="519" Background="White" FontSize="24" FontFamily="Sitka Small">
+        <TextBox x:Name="dateTxt" Text="{Binding Recording_date}" HorizontalAlignment="Left" Height="50" Margin="540,380,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="519" Background="White" FontSize="24" FontFamily="Sitka Small">
             <TextBox.Template>
                 <ControlTemplate>
                     <Border CornerRadius="12" Padding="2" BorderThickness="1" BorderBrush="Black">
@@ -85,7 +85,7 @@
             </TextBox.Template>
         </TextBox>
         <Label Content="Время записи" HorizontalAlignment="Left" Margin="248,435,0,0" VerticalAlignment="Top" FontSize="24"/>
-        <TextBox x:Name="timeadd" HorizontalAlignment="Left" Height="50" Margin="540,435,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="519" Background="White" FontSize="24" FontFamily="Sitka Small">
+        <TextBox x:Name="timeTxt" Text="{Binding Recording_time}" HorizontalAlignment="Left" Height="50" Margin="540,435,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="519" Background="White" FontSize="24" FontFamily="Sitka Small">
             <TextBox.Template>
                 <ControlTemplate>
                     <Border CornerRadius="12" Padding="2" BorderThickness="1" BorderBrush="Black">
@@ -95,7 +95,7 @@
             </TextBox.Template>
         </TextBox>
         <Label Content="Номер отдела" HorizontalAlignment="Left" Margin="248,490,0,0" VerticalAlignment="Top" FontSize="24"/>
-        <TextBox x:Name="departamentadd" HorizontalAlignment="Left" Height="50" Margin="540,490,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="519" Background="White" FontSize="24" FontFamily="Sitka Small">
+        <TextBox x:Name="departamentTxt" Text="{Binding id_Departament}" HorizontalAlignment="Left" Height="50" Margin="540,490,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="519" Background="White" FontSize="24" FontFamily="Sitka Small">
             <TextBox.Template>
                 <ControlTemplate>
                     <Border CornerRadius="12" Padding="2" BorderThickness="1" BorderBrush="Black">
@@ -104,7 +104,7 @@
                 </ControlTemplate>
             </TextBox.Template>
         </TextBox>
-        <Button Content="Добавить" HorizontalAlignment="Left" Margin="765,559,0,0" VerticalAlignment="Top" Width="294" Height="45" FontFamily="Sitka Small" FontSize="24" Background="#FF4F4F4F" Foreground="White" Click="Button_Click_1"/>
+        <Button x:Name="btnAdd" Content="Добавить" HorizontalAlignment="Left" Margin="765,559,0,0" VerticalAlignment="Top" Width="294" Height="45" FontFamily="Sitka Small" FontSize="24" Background="#FF4F4F4F" Foreground="White" Click="Button_Click_1"/>
         <Button HorizontalAlignment="Left" Margin="10,600,0,0" VerticalAlignment="Top" Width="58" Height="45" FontFamily="Sitka Small" FontSize="24" Background="White" Foreground="White" Click="Button_Click">
             <Image Height="45" Source="icons8-налево-60.png" Stretch="Fill" Width="58"/>
         </Button>

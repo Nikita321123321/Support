@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Соц_поддержка"
         mc:Ignorable="d"
-        Title="Записи_клиентов" Height="686" Width="1321" WindowStartupLocation="CenterScreen">
+        Title="Запись населения" Height="686" Width="1321" WindowStartupLocation="CenterScreen">
     <Grid>
         <Grid.Background>
             <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
@@ -13,7 +13,7 @@
                 <GradientStop Color="#FF386499" Offset="1"/>
             </LinearGradientBrush>
         </Grid.Background>
-        <DataGrid x:Name="clientTable" HorizontalAlignment="Left" Height="635" Margin="353,10,0,0" VerticalAlignment="Top" Width="950" AutoGenerateColumns="False" FontFamily="Sitka Small" FontSize="14">
+        <DataGrid x:Name="clientTable" ItemsSource="{Binding Client}" HorizontalAlignment="Left" Height="635" Margin="353,10,0,0" VerticalAlignment="Top" Width="950" AutoGenerateColumns="False" FontFamily="Sitka Small" FontSize="14" IsReadOnly="True">
             <DataGrid.Columns>
                 <DataGridTextColumn Width="*" x:Name="id" Binding="{Binding id}" Header="Код"/>
                 <DataGridTextColumn Width="*" x:Name="surename" Binding="{Binding Surename}" Header="Фамилия"/>
@@ -24,18 +24,18 @@
                 <DataGridTextColumn Width="*" x:Name="adress" Binding="{Binding Adress}" Header="Адрес"/>
                 <DataGridTextColumn Width="*" x:Name="recordingdate" Binding="{Binding Recording_date}" Header="Дата записи"/>
                 <DataGridTextColumn Width="*" x:Name="recordingtime" Binding="{Binding Recording_time}" Header="Время записи"/>
-                <DataGridTextColumn Width="*" x:Name="departament" Binding="{Binding id_Departament}" Header="Номер отдела"/>
+                <DataGridTextColumn Width="*" x:Name="departament" Binding="{Binding Departament.Departament1}" Header="Номер отдела"/>
                 <DataGridTemplateColumn>
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
-                            <Button x:Name="Delete" Click="btn_del_Click" Content="Удалить"/>
+                            <Button x:Name="btnEdit" Click="btn_edd_Click" Content="Редактировать"/>
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>
             </DataGrid.Columns>
         </DataGrid>
         <Image Margin="105,10,1065,520" Source="icons8-контрольный-список-100.png" Stretch="Fill"/>
-        <TextBox x:Name="search" HorizontalAlignment="Left" Height="42" Margin="10,160,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="338" Background="White" FontSize="24" FontFamily="Sitka Small">
+        <TextBox x:Name="search" HorizontalAlignment="Left" Height="42" Margin="10,160,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="338" Background="White" FontSize="24" FontFamily="Sitka Small" TextChanged="search_TextChanged">
             <TextBox.Template>
                 <ControlTemplate>
                     <Border CornerRadius="12" Padding="2" BorderThickness="1" BorderBrush="Black">
@@ -44,12 +44,12 @@
                 </ControlTemplate>
             </TextBox.Template>
         </TextBox>
-        <Button Content="Поиск" HorizontalAlignment="Left" Margin="26,207,0,0" VerticalAlignment="Top" Width="294" Height="45" FontFamily="Sitka Small" FontSize="24" Background="#FF4F4F4F" Foreground="White"/>
-        <Button Content="Добавить" HorizontalAlignment="Left" Margin="26,299,0,0" VerticalAlignment="Top" Width="294" Height="45" FontFamily="Sitka Small" FontSize="24" Background="#FF4F4F4F" Foreground="White" Click="Button_Click_1"/>
-        <Button Content="Редактировать" HorizontalAlignment="Left" Margin="26,349,0,0" VerticalAlignment="Top" Width="294" Height="45" FontFamily="Sitka Small" FontSize="24" Background="#FF4F4F4F" Foreground="White" Click="Button_Click_2"/>
+        <Button x:Name="btnAdd" Content="Добавить" HorizontalAlignment="Left" Margin="26,249,0,0" VerticalAlignment="Top" Width="294" Height="45" FontFamily="Sitka Small" FontSize="24" Background="#FF4F4F4F" Foreground="White" Click="Button_Click_1"/>
+        <Button x:Name="btnDel" Content="Удалить" HorizontalAlignment="Left" Margin="26,299,0,0" VerticalAlignment="Top" Width="294" Height="45" FontFamily="Sitka Small" FontSize="24" Background="#FF4F4F4F" Foreground="White" Click="btnDel_Click"/>
         <Button HorizontalAlignment="Left" Margin="10,600,0,0" VerticalAlignment="Top" Width="58" Height="45" FontFamily="Sitka Small" FontSize="24" Background="White" Foreground="White" Click="Button_Click">
             <Image Height="45" Source="icons8-налево-60.png" Stretch="Fill" Width="58"/>
         </Button>
+        <Label Content="Поиск" HorizontalAlignment="Left" Margin="139,207,0,0" VerticalAlignment="Top" FontSize="22" FontFamily="Sitka Small"/>
 
     </Grid>
 </Window>

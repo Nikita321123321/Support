@@ -19,11 +19,12 @@ namespace Соц_поддержка
     /// </summary>
     public partial class Добавление : Window
     {
-        SupportEntities db;
-        public Добавление()
+        SupportEntities support;
+        public Добавление(SupportEntities support1, Client client)
         {
             InitializeComponent();
-            db = new SupportEntities();
+            this.support = support1;
+            this.DataContext = client;
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
@@ -35,30 +36,8 @@ namespace Соц_поддержка
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
-            Client client = new Client();
-            client.Surename = surenameadd.Text;
-            client.Name = nameadd.Text;
-            client.Lastname = lastnameadd.Text;
-            client.Birthday = birthdayadd.Text;
-            client.Phone = phoneadd.Text;
-            client.Adress = adressadd.Text;
-            client.Recording_date = dateadd.Text;
-            client.Recording_time = timeadd.Text;
-            int a = Convert.ToInt32(departamentadd.Text);
-            client.id_Departament = a;
-            MessageBox.Show("Запись добавлена");
-            try
-            {
-                db.Client.Add(client);
-                db.SaveChanges();
-                Записи_клиентов записи = new Записи_клиентов();
-                записи.Show();
-                Close();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
+            support.SaveChanges();
+            Close();
         }
     }
 }

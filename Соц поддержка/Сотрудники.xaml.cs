@@ -33,5 +33,50 @@ namespace Соц_поддержка
             mainWindow.Show();
             Close();
         }
+        private void search_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            if (search.Text == null)
+            {
+                return;
+            }
+            List<Worker> clients = support.Worker.ToList();
+            clients = clients.Where(x => x.Surename.ToLower().Contains(search.Text.ToLower())).ToList();
+            workerTable.ItemsSource = clients.OrderBy(x => x.id).ToList();
+        }
+
+        private void btnDel_Click(object sender, RoutedEventArgs e)
+        {
+            var del = workerTable.SelectedItem as Worker;
+            if (del == null)
+            {
+                MessageBox.Show("Выберите строку");
+                return;
+            }
+            support.Worker.Remove(del);
+            support.SaveChanges();
+            update();
+        }
+        private void btn_edd_Click(object sender, RoutedEventArgs e)
+        {
+            Button edd1 = sender as Button;
+            var edd2 = edd1.DataContext as Worker;
+            var edd3 = new Редактирование1(support, edd2);
+            edd3.ShowDialog();
+            workerTable.ItemsSource = support.Worker.ToList();
+        }
+        private void update()
+        {
+            workerTable.ItemsSource = support.Worker.ToList();
+            workerTable.Items.Refresh();
+        }
+
+        private void AddBtn_Click(object sender, RoutedEventArgs e)
+        {
+            var add = new Worker();
+            support.Worker.Add(add);
+            var add1 = new Добавление1(support, add);
+            add1.ShowDialog();
+            update();
+        }
     }
 }

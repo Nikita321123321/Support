@@ -13,21 +13,28 @@
                 <GradientStop Color="#FF386499" Offset="1"/>
             </LinearGradientBrush>
         </Grid.Background>
-        <DataGrid x:Name="workerTable" HorizontalAlignment="Left" Height="635" Margin="353,10,0,0" VerticalAlignment="Top" Width="950" AutoGenerateColumns="False">
+        <DataGrid x:Name="workerTable" ItemsSource="{Binding Worker}" HorizontalAlignment="Left" Height="635" Margin="353,10,0,0" VerticalAlignment="Top" Width="950" AutoGenerateColumns="False" IsReadOnly="True">
             <DataGrid.Columns>
                 <DataGridTextColumn Width="*" x:Name="id" Binding="{Binding id}" Header="Код"/>
                 <DataGridTextColumn Width="*" x:Name="surename" Binding="{Binding Surename}" Header="Фамилия"/>
                 <DataGridTextColumn Width="*" x:Name="name" Binding="{Binding Name}" Header="Имя"/>
                 <DataGridTextColumn Width="*" x:Name="lastname" Binding="{Binding Lastname}" Header="Отчество"/>
-                <DataGridTextColumn Width="*" x:Name="gender" Binding="{Binding id_Gender}" Header="Код пола"/>
-                <DataGridTextColumn Width="*" x:Name="speciality" Binding="{Binding id_Speciality}" Header="Код специальности"/>
+                <DataGridTextColumn Width="*" x:Name="gender" Binding="{Binding Gender.Gender1}" Header="Код пола"/>
+                <DataGridTextColumn Width="*" x:Name="speciality" Binding="{Binding Speciality.Speciality1}" Header="Код специальности"/>
                 <DataGridTextColumn Width="*" x:Name="phone" Binding="{Binding Phone}" Header="Телефон"/>
                 <DataGridTextColumn Width="*" x:Name="birthday" Binding="{Binding Birthday}" Header="День рождения"/>
                 <DataGridTextColumn Width="*" x:Name="email" Binding="{Binding Email}" Header="Email"/>
+                <DataGridTemplateColumn>
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button x:Name="btnEdit" Click="btn_edd_Click" Content="Редактировать"/>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
             </DataGrid.Columns>
         </DataGrid>
         <Image Margin="101,10,1069,520" Source="icons8-идентифицированный-пользователь-мужчина-100.png" Stretch="Fill"/>
-        <TextBox x:Name="search" HorizontalAlignment="Left" Height="45" Margin="10,160,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="338" Background="White" FontSize="24" FontFamily="Sitka Small">
+        <TextBox x:Name="search" HorizontalAlignment="Left" Height="45" Margin="10,160,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="338" Background="White" FontSize="24" FontFamily="Sitka Small" TextChanged="search_TextChanged">
             <TextBox.Template>
                 <ControlTemplate>
                     <Border CornerRadius="12" Padding="2" BorderThickness="1" BorderBrush="Black">
@@ -36,12 +43,12 @@
                 </ControlTemplate>
             </TextBox.Template>
         </TextBox>
-        <Button Content="Поиск" HorizontalAlignment="Left" Margin="26,210,0,0" VerticalAlignment="Top" Width="294" Height="45" FontFamily="Sitka Small" FontSize="24" Background="#FF4F4F4F" Foreground="White"/>
-        <Button Content="Фильтрация" HorizontalAlignment="Left" Margin="26,343,0,0" VerticalAlignment="Top" Width="294" Height="45" FontFamily="Sitka Small" FontSize="24" Background="#FF4F4F4F" Foreground="White"/>
-        <Label Content="Только сотрудники отделов" HorizontalAlignment="Left" Margin="10,305,0,0" VerticalAlignment="Top" FontSize="22"/>
+        <Button x:Name="btnDel" Content="Удалить" HorizontalAlignment="Left" Margin="29,298,0,0" VerticalAlignment="Top" Width="294" Height="45" FontFamily="Sitka Small" FontSize="24" Background="#FF4F4F4F" Foreground="White" Click="btnDel_Click"/>
+        <Label Content="Поиск" HorizontalAlignment="Left" Margin="131,210,0,0" VerticalAlignment="Top" FontSize="22"/>
         <Button HorizontalAlignment="Left" Margin="10,600,0,0" VerticalAlignment="Top" Width="58" Height="45" FontFamily="Sitka Small" FontSize="24" Background="White" Foreground="White" Click="Button_Click">
             <Image Height="45" Source="icons8-налево-60.png" Stretch="Fill" Width="58"/>
         </Button>
+        <Button x:Name="AddBtn" Content="Добавить" HorizontalAlignment="Left" Margin="29,248,0,0" VerticalAlignment="Top" Width="294" Height="45" FontFamily="Sitka Small" FontSize="24" Background="#FF4F4F4F" Foreground="White" Click="AddBtn_Click"/>
 
     </Grid>
 </Window>
